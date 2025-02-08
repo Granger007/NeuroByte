@@ -11,6 +11,8 @@ import Maze from './components/Maze';
 import MemoryGame from './components/MemoryGame';
 import EarlyDiagnosis from './components/EarlyDiagnosis';
 import Mindfulness from './components/Mindfulness';
+import AutismQuestionnaire from './components/AutismQuestionnaire';
+import ADHDQuestionnaire from './components/ADHDQuestionnaire';
 
 
 
@@ -31,6 +33,15 @@ function App() {
             {user.role === 'doctor' && (
               <Route path="/diagnosis" element={<Diagnosis />} />
             )}
+            {
+              user.role === 'parent' && (
+                <>
+                  <Route path="/autismquestionnaire" element={<AutismQuestionnaire />} />
+                  <Route path="/adhdquestionnaire" element={<ADHDQuestionnaire />} />
+                </>
+              )
+            }
+
             <Route path="/games" element={<Games />} />
             <Route path="/earlydiagnosis" element={<EarlyDiagnosis />} />
             <Route path="/mindfulness" element={<Mindfulness />} />

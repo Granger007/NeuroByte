@@ -4,7 +4,8 @@ import { Brain } from 'lucide-react';
 
 function Auth() {
   const [isLogin, setIsLogin] = useState(true);
-  const [role, setRole] = useState<'patient' | 'doctor'>('patient');
+  const [role, setRole] = useState<'patient' | 'doctor' | 'parent'>('patient');
+  const [relatedPerson, setRelatedPerson] = useState('');
   const setUser = useAuthStore((state) => state.setUser);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -14,6 +15,7 @@ function Auth() {
       id: '1',
       email: 'user@example.com',
       role,
+      relatedPerson: relatedPerson || null,
     });
   };
 
@@ -47,13 +49,48 @@ function Auth() {
             <label className="block text-sm font-medium mb-1">Role</label>
             <select
               value={role}
-              onChange={(e) => setRole(e.target.value as 'patient' | 'doctor')}
+              onChange={(e) => {
+                const selectedRole = e.target.value as 'patient' | 'doctor' | 'parent';
+                setRole(selectedRole);
+                setRelatedPerson(''); // Reset related person field when changing role
+              }}
               className="w-full px-3 py-2 bg-background border border-muted rounded-md"
             >
               <option value="patient">Patient</option>
+              <option value="parent">Parent</option>
               <option value="doctor">Doctor</option>
             </select>
+
           </div>
+
+          {/* Additional fields based on role selection */}
+          {role === 'patient' && (
+            <div>
+              <label className="block text-sm font-medium mb-1">Parent's Name</label>
+              <input
+                type="text" required
+                placeholder="Enter parent's name"
+                value={relatedPerson}
+                onChange={(e) => setRelatedPerson(e.target.value)}
+                className="w-full px-3 py-2 bg-background border border-muted rounded-md"
+              />
+            </div>
+          )}
+
+          {role === 'parent' && (
+            <div>
+              <label className="block text-sm font-medium mb-1">Child's Name</label>
+              <input
+                type="text" 
+                placeholder="Enter child's name"
+                value={relatedPerson}
+                onChange={(e) => setRelatedPerson(e.target.value)}
+                required
+                className="w-full px-3 py-2 bg-background border border-muted rounded-md"
+              />
+            </div>
+          )}
+
           <button
             type="submit"
             className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-2 rounded-md transition-colors"
@@ -61,6 +98,7 @@ function Auth() {
             {isLogin ? 'Sign In' : 'Sign Up'}
           </button>
         </form>
+
         <p className="mt-4 text-center text-sm">
           {isLogin ? "Don't have an account? " : 'Already have an account? '}
           <button
@@ -75,4 +113,4 @@ function Auth() {
   );
 }
 
-export default Auth
+export default Auth;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Activity, GamepadIcon, LogOut,Stethoscope,HeartPulse } from 'lucide-react';
+import { Brain, Activity, GamepadIcon, LogOut,Stethoscope,HeartPulse,MessageCircleQuestionIcon } from 'lucide-react';
 import { useAuthStore } from '../store/auth';
 import { cn } from '../lib/utils';
 
@@ -36,17 +36,26 @@ function Navbar() {
               icon: GamepadIcon,
             },
             {
-              name: 'Early Diagnosis',
-              path: '/earlydiagnosis',
-              icon: Stethoscope,
-            },
-            {
               name: 'Mindfulness',
               path: '/mindfulness',
               icon: HeartPulse,
-            }
+            },
           ]
         : []),
+        ...(user?.role === 'parent'
+          ? [
+            {
+              name: 'Games',
+              path: '/games',
+              icon: GamepadIcon,
+            },
+              {
+                name: 'Early Diagnosis of ADHD and Autism',
+                path: '/earlydiagnosis',
+                icon: MessageCircleQuestionIcon,
+              },
+            ]
+          : []),
   ];
 
   return (
