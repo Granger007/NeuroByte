@@ -12,34 +12,35 @@ const optionValues = {
 
 const questions = {
   "Social Communication & Interaction": [
-    "Do you find it difficult to start or maintain conversations with others?",
-    "Do you struggle to understand non-verbal cues like facial expressions, gestures, or tone of voice?",
-    "Do you find it challenging to maintain eye contact during conversations?",
-    "Do you often take things literally and find it difficult to understand jokes, sarcasm, or figurative speech?",
-    "Do you feel uncomfortable in social situations or prefer to be alone?",
-    "Do you struggle with understanding personal space and boundaries?",
+    "Does you/your ward find it difficult to start or maintain conversations with others?",
+    "Does you/your ward struggle to understand non-verbal cues like facial expressions, gestures, or tone of voice?",
+    "Does you/your ward find it challenging to maintain eye contact during conversations?",
+    "Does you/your ward often take things literally and find it difficult to understand jokes, sarcasm, or figurative speech?",
+    "Do you/your ward feel uncomfortable in social situations or prefer to be alone?",
+    "Does you/your ward struggle with understanding personal space and boundaries?",
   ],
   "Repetitive Behaviors & Routines": [
-    "Do you engage in repetitive body movements (e.g., hand-flapping, rocking, spinning)?",
-    "Do you have a strong need for routines and get upset when they are disrupted?",
-    "Do you intensely focus on specific topics or interests for long periods?",
-    "Do you repeat words, phrases, or questions frequently (echolalia)?",
-    "Do you prefer engaging in the same activities repeatedly rather than trying new things?",
+    "Does you/your ward engage in repetitive body movements (e.g., hand-flapping, rocking, spinning)?",
+    "Does you/your ward have a strong need for routines and get upset when they are disrupted?",
+    "Does you/your ward intensely focus on specific topics or interests for long periods?",
+    "Does you/your ward frequently repeat words, phrases, or questions (echolalia)?",
+    "Does you/your ward prefer engaging in the same activities repeatedly rather than trying new things?",
   ],
   "Sensory Sensitivities": [
-    "Are you highly sensitive to certain sounds, lights, or textures?",
-    "Do you find certain clothing, tags, or fabrics extremely uncomfortable?",
-    "Do you experience strong reactions to specific smells or tastes?",
-    "Do you dislike being touched or hugged unless you initiate it?",
-    "Do you seek out sensory stimulation, such as touching different textures, smelling objects, or staring at lights?",
+    "Is you/your ward highly sensitive to certain sounds, lights, or textures?",
+    "Does you/your ward find certain clothing, tags, or fabrics extremely uncomfortable?",
+    "Does you/your ward experience strong reactions to specific smells or tastes?",
+    "Does you/your ward dislike being touched or hugged unless they initiate it?",
+    "Does you/your ward seek out sensory stimulation, such as touching different textures, smelling objects, or staring at lights?",
   ],
   "Emotional Regulation & Daily Functioning": [
-    "Do you struggle with managing emotions and experience frequent meltdowns or shutdowns?",
-    "Do you find changes in routine or unexpected events extremely distressing?",
-    "Do you have difficulty making decisions or feel overwhelmed by too many choices?",
-    "Do you find it hard to express your emotions or understand the emotions of others?",
+    "Does you/your ward struggle with managing emotions and experience frequent meltdowns or shutdowns?",
+    "Does you/your ward find changes in routine or unexpected events extremely distressing?",
+    "Does you/your ward have difficulty making decisions or feel overwhelmed by too many choices?",
+    "Does you/your ward find it hard to express emotions or understand the emotions of others?",
   ],
 };
+
 
 const AutismQuestionnaire = () => {
   const [formData, setFormData] = useState({});

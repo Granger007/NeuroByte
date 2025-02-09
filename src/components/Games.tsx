@@ -7,7 +7,7 @@ const games = [
     id: 1,
     title: "Card Matching Game",  
     description: "Strengthen short-term memory and recall ability. Supports cognitive flexibility.",
-    streak: 5,
+    streak: 1,
     image: "https://www.memozor.com/templates/memoire/images/zoom/memory_game_kids_letters_alphabet.jpg",
     route: "/cardmatching",
   },
@@ -15,7 +15,7 @@ const games = [
     id: 2,
     title: "Maze Game",
     description: "Challenge cognitive flexibility and problem-solving skills. Enhances attention span.",
-    streak: 3,
+    streak: 1,
     image: "https://m.media-amazon.com/images/I/11tjDcyK9DL.png",
     route: "/maze",
   },
@@ -23,14 +23,19 @@ const games = [
     id: 3,
     title: "Spot the Difference",
     description: "Identify the differences between two images. Increases attention span.",
-    streak: 7,
+    streak: 1,
     image: "https://payload.cargocollective.com/1/0/3562/31236/logo_spotthedifference_o.jpg",
     route: "/spotthedifference",
   },
 ];
 
 // EXP needed per level
+const score = [800,400,500,900,600,700];
 const levelThresholds = [250, 500, 900, 1200, 1500];
+function getRandomIndex() {
+  return Math.floor(Math.random() * 5);
+}
+const Index = getRandomIndex();
 
 function Games() {
   const [exp, setExp] = useState<number>(0);
@@ -77,7 +82,7 @@ function Games() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <Trophy className="w-5 h-5 text-primary mr-2" />
-                    <span className="text-sm">Best Score: 2,450</span>
+                    <span className="text-sm">Best Score: {score[Index]}</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 text-secondary mr-2" />

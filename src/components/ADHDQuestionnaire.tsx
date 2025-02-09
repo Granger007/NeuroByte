@@ -4,34 +4,35 @@ const options = ["Never", "Rarely", "Sometimes", "Often", "Very Often"];
 
 const questions = {
   "Inattention": [
-    "Do you often struggle to focus on tasks or activities, even those that interest you?",
-    "Do you frequently make careless mistakes in work, school, or daily activities?",
-    "Do you often have trouble organizing tasks and activities?",
-    "Do you frequently lose important items such as keys, wallets, or school/work materials?",
-    "Do you find yourself easily distracted by external stimuli or random thoughts?",
-    "Do you frequently forget to complete daily activities or appointments?",
+    "Does you/your ward frequently make careless mistakes in work, school, or daily activities?",
+    "Does you/your ward often struggle to focus on tasks or activities, even those that interest them?",
+    "Does you/your ward often have trouble organizing tasks and activities?",
+    "Does you/your ward frequently lose important items such as keys, wallets, or school/work materials?",
+    "Does you/your ward find themselves easily distracted by external stimuli or random thoughts?",
+    "Does you/your ward frequently forget to complete daily activities or appointments?",
   ],
   "Hyperactivity & Impulsivity": [
-    "Do you often feel the need to move around in situations where you are expected to stay seated?",
-    "Do you frequently fidget, tap your hands or feet, or have difficulty staying still?",
-    "Do you often blurt out answers or interrupt conversations before the other person finishes speaking?",
-    "Do you have difficulty waiting for your turn in conversations or activities?",
-    "Do you feel restless, as if driven by a motor, or have difficulty engaging in leisure activities quietly?",
+    "Does you/your ward often feel the need to move around in situations where they are expected to stay seated?",
+    "Does you/your ward frequently fidget, tap their hands or feet, or have difficulty staying still?",
+    "Does you/your ward often blurt out answers or interrupt conversations before the other person finishes speaking?",
+    "Does you/your ward have difficulty waiting for their turn in conversations or activities?",
+    "Does you/your ward feel restless, as if driven by a motor, or have difficulty engaging in leisure activities quietly?",
   ],
   "Emotional Regulation & Social Interactions": [
-    "Do you often feel overwhelmed by emotions, such as frustration or anger, and struggle to control them?",
-    "Do you frequently experience mood swings or sudden emotional changes?",
-    "Do you find it challenging to maintain friendships or social relationships due to impulsive behavior?",
-    "Do you often feel mentally exhausted due to overthinking or difficulty in processing information?",
+    "Does you/your ward often feel overwhelmed by emotions, such as frustration or anger, and struggle to control them?",
+    "Does you/your ward frequently experience mood swings or sudden emotional changes?",
+    "Does you/your ward find it challenging to maintain friendships or social relationships due to impulsive behavior?",
+    "Does you/your ward often feel mentally exhausted due to overthinking or difficulty in processing information?",
   ],
   "Lifestyle & Daily Functioning": [
-    "Do you struggle with time management, often running late or missing deadlines?",
-    "Do you frequently procrastinate or find it difficult to start tasks?",
-    "Do you experience difficulty in completing long-term projects due to lack of focus or motivation?",
-    "Do you find it difficult to follow instructions or stay on track when performing complex tasks?",
-    "How much do these symptoms affect your daily life, including work, school, or relationships?",
+    "Does you/your ward struggle with time management, often running late or missing deadlines?",
+    "Does you/your ward frequently procrastinate or find it difficult to start tasks?",
+    "Does you/your ward experience difficulty in completing long-term projects due to lack of focus or motivation?",
+    "Does you/your ward find it difficult to follow instructions or stay on track when performing complex tasks?",
+    "To what extent do these symptoms affect you/your ward’s daily life, including work, school, or relationships?",
   ],
 };
+
 
 const optionValues = {
   "Never": 1,

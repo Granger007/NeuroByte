@@ -88,6 +88,8 @@ function Assessment() {
         </div>
       </div>
 
+      
+
       <div className="mt-8 bg-card rounded-lg p-6 shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-4">Common Stigma & Misconceptions About ADHD</h2>
         <div className="space-y-6">
