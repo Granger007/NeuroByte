@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useAuthStore } from '../store/auth';
 import { Brain } from 'lucide-react';
 
 function Auth() {
   const [isLogin, setIsLogin] = useState(true);
+  const [name, setName] = useState('');
   const [role, setRole] = useState<'patient' | 'doctor' | 'parent'>('patient');
   const [relatedPerson, setRelatedPerson] = useState('');
   const setUser = useAuthStore((state) => state.setUser);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual authentication
-    setUser({
-      id: '1',
-      email: 'user@example.com',
-      role,
-      relatedPerson: relatedPerson || null,
-    });
+    if (!isLogin) {
+      // Simulate account creation and redirect to login
+      setTimeout(() => {
+        setIsLogin(true);
+      }, 500); // Simulating API response time
+    } else {
+      // Handle login
+      setUser({
+        id: '1',
+        name,
+        email: 'user@example.com',
+        role,
+        relatedPerson: relatedPerson || null,
+      });
+      navigate('/assessment'); // Redirect to the dashboard or home page
+    }
   };
 
   return (
@@ -29,6 +41,18 @@ function Auth() {
           {isLogin ? 'Welcome Back' : 'Create Account'}
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {!isLogin && (
+            <div>
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <input
+                type="text"
+                className="w-full px-3 py-2 bg-background border border-muted rounded-md"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+          )}
           <div>
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
@@ -60,7 +84,6 @@ function Auth() {
               <option value="parent">Parent</option>
               <option value="doctor">Doctor</option>
             </select>
-
           </div>
 
           {/* Additional fields based on role selection */}
@@ -68,10 +91,11 @@ function Auth() {
             <div>
               <label className="block text-sm font-medium mb-1">Parent's Name</label>
               <input
-                type="text" required
+                type="text"
                 placeholder="Enter parent's name"
                 value={relatedPerson}
                 onChange={(e) => setRelatedPerson(e.target.value)}
+                required
                 className="w-full px-3 py-2 bg-background border border-muted rounded-md"
               />
             </div>
@@ -81,7 +105,7 @@ function Auth() {
             <div>
               <label className="block text-sm font-medium mb-1">Child's Name</label>
               <input
-                type="text" 
+                type="text"
                 placeholder="Enter child's name"
                 value={relatedPerson}
                 onChange={(e) => setRelatedPerson(e.target.value)}

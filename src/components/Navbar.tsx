@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Activity, GamepadIcon, LogOut,Stethoscope,HeartPulse,MessageCircleQuestionIcon } from 'lucide-react';
+import { Brain, Activity, GamepadIcon, LogOut, Stethoscope, HeartPulse, MessageCircleQuestionIcon, LogIn, UserPlus } from 'lucide-react';
 import { useAuthStore } from '../store/auth';
 import { cn } from '../lib/utils';
 
@@ -8,6 +8,7 @@ function Navbar() {
   const location = useLocation();
   const user = useAuthStore((state) => state.user);
   const setUser = useAuthStore((state) => state.setUser);
+  const isLoggedIn = !!user;
 
   const handleLogout = () => {
     setUser(null);
@@ -28,39 +29,39 @@ function Navbar() {
           },
         ]
       : []),
-      ...(user?.role === 'patient'
-        ? [
-            {
-              name: 'Games',
-              path: '/games',
-              icon: GamepadIcon,
-            },
-            {
-              name: 'Mindfulness',
-              path: '/mindfulness',
-              icon: HeartPulse,
-            },
-          ]
-        : []),
-        ...(user?.role === 'parent'
-          ? [
-            {
-              name: 'Games',
-              path: '/games',
-              icon: GamepadIcon,
-            },
-            {
-              name: 'Early Diagnosis of ADHD and Autism',
-              path: '/earlydiagnosis',
-              icon: MessageCircleQuestionIcon,
-            },
-            {
-              name: 'Symptoms',
-              path: '/symptom',
-              icon: Stethoscope,
-            },
-            ]
-          : []),
+    ...(user?.role === 'patient'
+      ? [
+          {
+            name: 'Games',
+            path: '/games',
+            icon: GamepadIcon,
+          },
+          {
+            name: 'Mindfulness',
+            path: '/mindfulness',
+            icon: HeartPulse,
+          },
+        ]
+      : []),
+    ...(user?.role === 'parent'
+      ? [
+          {
+            name: 'Games',
+            path: '/games',
+            icon: GamepadIcon,
+          },
+          {
+            name: 'Early Diagnosis of ADHD and Autism',
+            path: '/earlydiagnosis',
+            icon: MessageCircleQuestionIcon,
+          },
+          {
+            name: 'Symptoms',
+            path: '/symptom',
+            icon: Stethoscope,
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -79,22 +80,41 @@ function Navbar() {
                     : 'text-foreground/60 hover:text-foreground'
                 )}
               >
-            {React.createElement(item.icon, { className: "w-4 h-4" })}
-            <span>{item.name}</span>
+                {React.createElement(item.icon, { className: "w-4 h-4" })}
+                <span>{item.name}</span>
               </Link>
             ))}
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center space-x-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
-          >
-            <LogOut className="w-4 h-4" />
-            <span>Logout</span>
-          </button>
+          {isLoggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="flex items-center space-x-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Logout</span>
+            </button>
+          ) : (
+            <div className="flex space-x-4">
+              <Link
+                to="/login"
+                className="flex items-center space-x-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Login</span>
+              </Link>
+              <Link
+                to="/signup"
+                className="flex items-center space-x-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <UserPlus className="w-4 h-4" />
+                <span>Signup</span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>
   );
 }
 
-export default Navbar
+export default Navbar;
