@@ -49,11 +49,16 @@ function Navbar() {
               path: '/games',
               icon: GamepadIcon,
             },
-              {
-                name: 'Early Diagnosis of ADHD and Autism',
-                path: '/earlydiagnosis',
-                icon: MessageCircleQuestionIcon,
-              },
+            {
+              name: 'Early Diagnosis of ADHD and Autism',
+              path: '/earlydiagnosis',
+              icon: MessageCircleQuestionIcon,
+            },
+            {
+              name: 'Symptoms',
+              path: '/symptom',
+              icon: Stethoscope,
+            },
             ]
           : []),
   ];

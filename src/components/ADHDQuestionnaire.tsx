@@ -33,17 +33,39 @@ const questions = {
   ],
 };
 
+const optionValues = {
+  "Never": 1,
+  "Rarely": 2,
+  "Sometimes": 3,
+  "Often": 4,
+  "Very Often": 5,
+};
+
 const ADHDQuestionnaire = () => {
   const [formData, setFormData] = useState({});
+  const [score, setScore] = useState(0);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const calculateScore = () => {
+    let totalScore = 0;
+    // Calculate score by adding the numerical values of selected options
+    Object.values(formData).forEach((answer) => {
+      if (answer && optionValues[answer] !== undefined) {
+        totalScore += optionValues[answer];
+      }
+    });
+    setScore(totalScore);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    calculateScore();
     console.log(formData);
+    console.log("Total Score:", score);
   };
 
   return (
@@ -103,6 +125,12 @@ const ADHDQuestionnaire = () => {
 
         <button type="submit" className="w-full p-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 transition">Submit</button>
       </form>
+
+      {score > 0 && (
+        <div className="mt-6 text-center text-lg font-semibold text-blue-400">
+          <p>Your Total Score: {score}</p>
+        </div>
+      )}
     </div>
   );
 };

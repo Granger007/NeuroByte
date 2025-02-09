@@ -19,6 +19,36 @@ const successStories = [
   },
 ];
 
+const misconceptionsADHD = [
+  {
+    myth: "Only Children Have ADHD",
+    fact: "ADHD often persists into adulthood, affecting work, relationships, and daily life.",
+  },
+  {
+    myth: "People with ADHD Are Lazy or Unintelligent",
+    fact: "ADHD affects executive function, not intelligence. Many individuals with ADHD are highly intelligent but may struggle with organization, deadlines, and focus.",
+  },
+  {
+    myth: "People with ADHD Just Need to Try Harder",
+    fact: "ADHD is a neurological condition, not about willpower. Telling someone to 'just focus' is like telling a nearsighted person to 'just see better' without glasses.",
+  },
+];
+
+const misconceptionsAutism = [
+  {
+    myth: "Autism Is Just a Lack of Social Skills",
+    fact: "Autism is a complex neurodevelopmental condition that affects various aspects of life, including communication, sensory processing, and behavior. Social challenges are just one part of the spectrum.",
+  },
+  {
+    myth: "People with Autism Can’t Lead Successful Lives",
+    fact: "Many people with autism are capable of living independent, fulfilling lives, excelling in education, careers, and personal interests. Early intervention and support can help maximize their potential.",
+  },
+  {
+    myth: "People with Autism Don’t Have Emotions",
+    fact: "People with autism experience a wide range of emotions but may express them differently. Social communication differences can make it harder for them to express or recognize emotions.",
+  },
+];
+
 function Assessment() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -55,6 +85,30 @@ function Assessment() {
           <button onClick={nextSlide} className="p-2 bg-primary text-white rounded-full">
             <ChevronRight className="w-6 h-6" />
           </button>
+        </div>
+      </div>
+
+      <div className="mt-8 bg-card rounded-lg p-6 shadow-lg">
+        <h2 className="text-2xl font-bold text-center mb-4">Common Stigma & Misconceptions About ADHD</h2>
+        <div className="space-y-6">
+          {misconceptionsADHD.map((item, index) => (
+            <div key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">
+              <p className="text-xl font-semibold text-red-500">🚫 Myth: {item.myth}</p>
+              <p className="text-lg text-green-400">✅ Fact: {item.fact}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 bg-card rounded-lg p-6 shadow-lg">
+        <h2 className="text-2xl font-bold text-center mb-4">Common Stigma & Misconceptions About Autism</h2>
+        <div className="space-y-6">
+          {misconceptionsAutism.map((item, index) => (
+            <div key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">
+              <p className="text-xl font-semibold text-red-500">🚫 Myth: {item.myth}</p>
+              <p className="text-lg text-green-400">✅ Fact: {item.fact}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

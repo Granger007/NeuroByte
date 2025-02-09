@@ -2,6 +2,14 @@ import React, { useState } from "react";
 
 const options = ["Never", "Rarely", "Sometimes", "Often", "Very Often"];
 
+const optionValues = {
+  "Never": 1,
+  "Rarely": 2,
+  "Sometimes": 3,
+  "Often": 4,
+  "Very Often": 5
+};
+
 const questions = {
   "Social Communication & Interaction": [
     "Do you find it difficult to start or maintain conversations with others?",
@@ -35,6 +43,7 @@ const questions = {
 
 const AutismQuestionnaire = () => {
   const [formData, setFormData] = useState({});
+  const [totalScore, setTotalScore] = useState(0);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,7 +52,17 @@ const AutismQuestionnaire = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    
+    // Calculate total score
+    let score = 0;
+    Object.values(formData).forEach((response) => {
+      if (optionValues[response]) {
+        score += optionValues[response];
+      }
+    });
+
+    setTotalScore(score);
+    console.log("Total Score:", score);
   };
 
   return (
@@ -103,6 +122,12 @@ const AutismQuestionnaire = () => {
 
         <button type="submit" className="w-full p-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 transition">Submit</button>
       </form>
+
+      {totalScore > 0 && (
+        <div className="mt-6 text-center text-xl text-blue-300">
+          <h2>Total Score: {totalScore}</h2>
+        </div>
+      )}
     </div>
   );
 };

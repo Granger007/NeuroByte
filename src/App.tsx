@@ -13,6 +13,7 @@ import EarlyDiagnosis from './components/EarlyDiagnosis';
 import Mindfulness from './components/Mindfulness';
 import AutismQuestionnaire from './components/AutismQuestionnaire';
 import ADHDQuestionnaire from './components/ADHDQuestionnaire';
+import Symptom from './components/Symptom';
 
 
 
@@ -38,6 +39,7 @@ function App() {
                 <>
                   <Route path="/autismquestionnaire" element={<AutismQuestionnaire />} />
                   <Route path="/adhdquestionnaire" element={<ADHDQuestionnaire />} />
+                  <Route path='/symptom' element={<Symptom />} />
                 </>
               )
             }
