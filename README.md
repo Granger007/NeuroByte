@@ -24,7 +24,7 @@ We introduce an **AI-driven, multi-layered detection and recovery system** that 
 Wanna heal in a fun and engaging environment ?? We've got you ✨
 -  **Personalized Brain-Training Games** tailored for ADHD & autism support.
 -  **Mindfulness & Yoga Modules** for stress and emotional regulation => thereby minimizing hyperactivity and impulsivity symptoms.
--  **Progress Tracking & Adaptive Challenges** to ensure long-term benefits.
+-  **Progress Tracking & Adaptive Challenges** to ensure long-term benefits and ensure parents get to see their child's progress over time.
 
 ##  Tech Stack
 ###  **Artificial Intelligence**
