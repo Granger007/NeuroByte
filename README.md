@@ -9,34 +9,34 @@ Early detection of ADHD and autism is **crucial** to ensuring timely interventio
 We introduce an **AI-driven, multi-layered detection and recovery system** that combines deep learning with interactive engagement:
 
 ### 🔎 **How It Works?**
-✅ **Step 1: Early Symptom Analyzer** – Users input symptoms, and AI detects patterns.
-✅ **Step 2: MRI-Based AI Detection** – If risk is detected, deep learning models analyze MRI scans for ADHD.
-✅ **Step 3: Gaze Behavior Analysis** – AI tracks gaze patterns for autism screening.
-✅ **Step 4: Gamified Recovery** – AI-powered cognitive training, mindfulness(through guided meditation sessions), memory puzzles for engagement and well-being.
-✅ **Step 5: 5-Point Early Detection Scale** – Classifies risk levels, ensuring high accuracy.
+ **Step 1: Early Symptom Analyzer** – Users input symptoms, and AI detects patterns.
+ **Step 2: MRI-Based AI Detection** – If risk is detected, deep learning models analyze MRI scans for ADHD.
+ **Step 3: Gaze Behavior Analysis** – AI tracks gaze patterns for autism screening.
+ **Step 4: Gamified Recovery** – AI-powered cognitive training, mindfulness(through guided meditation sessions), memory puzzles for engagement and well-being.
+ **Step 5: 5-Point Early Detection Scale** – Classifies risk levels, ensuring high accuracy.
 
-## 🎯 Why This is Revolutionary
-✨ **Fast & Reliable Early Diagnosis** – AI-driven pattern recognition significantly reduces delays in diagnosis.
-✨ **Gamification of Recovery** – Interactive brain-training games and stress management techniques make therapy engaging.
-✨ **AI-Driven Precision** – Advanced neural networks ensure more accurate predictions using MRI & gaze behavior analysis...these accuracy values can fuurther be improved in the future by finetuning the model on a wider  scale
+## 🎯 Why This is Revolutionary??
+ **Fast & Reliable Early Diagnosis** – AI-driven pattern recognition significantly reduces delays in diagnosis.
+ **Gamification of Recovery** – Interactive brain-training games and stress management techniques make therapy engaging.
+ **AI-Driven Precision** – Advanced neural networks ensure more accurate predictions using MRI & gaze behavior analysis...these accuracy values can fuurther be improved in the future by finetuning the model on a wider  scale
 
 ## 🎮 Gamified Recovery
 We believe healing should be engaging! NeuroByte includes:
-- 🧩 **Personalized Brain-Training Games** tailored for ADHD & autism support.
-- 🧘‍♂️ **Mindfulness & Yoga Modules** for stress and emotional regulation => thereby minimizing hyperactivity and impulsivity symptoms.
-- 🎯 **Progress Tracking & Adaptive Challenges** to ensure long-term benefits.
+-  **Personalized Brain-Training Games** tailored for ADHD & autism support.
+-  **Mindfulness & Yoga Modules** for stress and emotional regulation => thereby minimizing hyperactivity and impulsivity symptoms.
+-  **Progress Tracking & Adaptive Challenges** to ensure long-term benefits.
 
 ## 💡 Tech Stack
-### 🧠 **Artificial Intelligence**
+###  **Artificial Intelligence**
 - **TensorFlow / PyTorch**
-  - MRI Analysis for ADHD🏥
-  - Gaze Behavior Analysis 👀
+  - MRI Analysis for ADHD
+  - Gaze Behavior Analysis 
 
 ### 💻 **Frontend**
-- React.js ⚛️ / Flutter 📱
+- React.js ⚛ / Flutter 
 
 ### 🔧 **Backend**
-- Node.js + Express ⚡
+- Node.js + Express 
 
 ## 🛠 Installation & Setup
 ### Prerequisites
