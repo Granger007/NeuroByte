@@ -21,7 +21,7 @@ We introduce an **AI-driven, multi-layered detection and recovery system** that 
  **AI-Driven Precision** – Advanced neural networks ensure more accurate predictions using MRI & gaze behavior analysis...these accuracy values can fuurther be improved in the future by finetuning the model on a wider  scale
 
 ##  Gamified Recovery
-We believe healing should be engaging! NeuroByte includes:
+Wanna heal in a fun and engaging environment ?? That's NeuroByte for you!!! ✨
 -  **Personalized Brain-Training Games** tailored for ADHD & autism support.
 -  **Mindfulness & Yoga Modules** for stress and emotional regulation => thereby minimizing hyperactivity and impulsivity symptoms.
 -  **Progress Tracking & Adaptive Challenges** to ensure long-term benefits.
