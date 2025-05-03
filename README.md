@@ -33,7 +33,7 @@ Wanna heal in a fun and engaging environment ?? That's NeuroByte for you!!! ✨
   - Gaze Behavior Analysis 
 
 ###  **Frontend**
-- React.js ⚛ / Flutter 
+- React.js / Flutter 
 
 ###  **Backend**
 - Node.js + Express 
